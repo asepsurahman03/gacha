@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gacha Hadiah Uang</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .wheel-container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 10px 0;
+        }
+        .wheel {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            border: 10px solid #333;
+            position: relative;
+            overflow: hidden;
+            transition: transform 3s ease-out;
+        }
+        .slice {
+            position: absolute;
+            width: 50%;
+            height: 50%;
+            top: 50%;
+            left: 50%;
+            transform-origin: 0% 0%;
+            clip-path: polygon(250% 0, 100% 100%, 0 0);
+           
+            justify-content: center;
+            align-items: center;
+            font-size: 12px;
+            font-weight: bold;
+            color: white;
+            text-align: center;
+            padding: 5px;
+        }
+        .pointer {
+            width: 0;
+            height: 0;
+            border-left: 20px solid transparent;
+            border-right: 20px solid transparent;
+            border-bottom: 40px solid red;
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex flex-col items-center justify-center h-screen">
+    <h1 class="text-2xl font-bold mb-4">Gacha Hadiah Uang 💰</h1>
+    <div class="wheel-container relative">
+        <div class="pointer"></div>
+        <div id="wheel" class="wheel"></div>
+    </div>
+    <button id="gachaBtn" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-700">Putar Gacha!</button>
+    <p id="result" class="mt-4 text-lg font-semibold"></p>
+
+    <script>
+        const prizes = [
+            { amount: "Coba Lagi", chance: 30 },
+            { amount: 1000, chance: 10 },
+            { amount: 5000, chance: 5 },
+            { amount: 10000, chance: 2 },
+            { amount: 50000, chance: 1 },
+            { amount: 100000, chance: 0.5 },
+            { amount: 500000, chance: 0.2 },
+            { amount: 1000000, chance: 0.1 }
+        ];
+
+        const wheel = document.getElementById("wheel");
+        let colors = ["#FF5733", "#FFC300", "#DAF7A6", "#C70039", "#900C3F", "#581845", "#3498db", "#2ecc71"];
+
+        prizes.forEach((prize, index) => {
+            let slice = document.createElement("div");
+            slice.className = "slice";
+            let rotation = index * (360 / prizes.length);
+            slice.style.transform = `rotate(${rotation}deg)`;
+            slice.style.background = colors[index % colors.length];
+            let text = document.createElement("span");
+            text.innerText = prize.amount;
+            text.style.transform = `rotate(${(360 / prizes.length) / 2}deg)`;
+            slice.appendChild(text);
+            wheel.appendChild(slice);
+        });
+
+        document.getElementById("gachaBtn").addEventListener("click", function() {
+            let random = Math.random() * 100;
+            let cumulativeChance = 0;
+            let selectedPrize = "Coba Lagi";
+
+            for (let prize of prizes) {
+                cumulativeChance += prize.chance;
+                if (random < cumulativeChance) {
+                    selectedPrize = prize.amount;
+                    break;
+                }
+            }
+            
+            let spinDegrees = Math.floor(Math.random() * 360) + (360 * 5);
+            wheel.style.transform = `rotate(${spinDegrees}deg)`;
+            setTimeout(() => {
+                document.getElementById("result").innerText = `Hasil: ${selectedPrize}`;
+            }, 3000);
+        });
+    </script>
+</body>
+</html>
