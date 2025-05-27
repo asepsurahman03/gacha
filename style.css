@@ -143,22 +143,24 @@ nav {
 /* Mobile menu behavior */
 @media (max-width: 768px) {
   .nav-links {
-    position: fixed;
-    top: 60px; /* pastikan sesuai tinggi navbar */
-    left: 0;
+    position: absolute;
+    top: 60px; /* Sesuai tinggi navbar */
     right: 0;
-    bottom: 0;
-    height: calc(100vh - 60px); /* total tinggi viewport minus navbar */
-    flex-direction: column;
-    background: var(--glass);
-    backdrop-filter: blur(100px);
-    padding: 2rem 2.5rem;
-    border-radius: 0;
+    left: 0;
+
     display: none;
+    flex-direction: column;
+    padding: 1.5rem 2rem;
+    gap: 1.2rem;
+
+    background: rgba(0, 0, 0, 0.6) !important; /* 🔥 transparan gelap */
+    backdrop-filter: blur(20px) !important; /* 🔍 blur aktif */
+    -webkit-backdrop-filter: blur(20px) !important; /* Safari fix */
+
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
     animation: slideIn 0.3s ease forwards;
-    overflow-y: auto;
     z-index: 1050;
+    border-radius: 0 0 10px 10px;
   }
 
   .nav-links.open {
