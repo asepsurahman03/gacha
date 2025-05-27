@@ -1,114 +1,245 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gacha Hadiah Uang</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        .wheel-container {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 10px 0;
-        }
-        .wheel {
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            border: 10px solid #333;
-            position: relative;
-            overflow: hidden;
-            transition: transform 3s ease-out;
-        }
-        .slice {
-            position: absolute;
-            width: 50%;
-            height: 50%;
-            top: 50%;
-            left: 50%;
-            transform-origin: 0% 0%;
-            clip-path: polygon(250% 0, 100% 100%, 0 0);
-           
-            justify-content: center;
-            align-items: center;
-            font-size: 12px;
-            font-weight: bold;
-            color: white;
-            text-align: center;
-            padding: 5px;
-        }
-        .pointer {
-            width: 0;
-            height: 0;
-            border-left: 20px solid transparent;
-            border-right: 20px solid transparent;
-            border-bottom: 40px solid red;
-            position: absolute;
-            top: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 10;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portofolio | Asep Surahman Sulaeman</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
 </head>
-<body class="bg-gray-100 flex flex-col items-center justify-center h-screen">
-    <h1 class="text-2xl font-bold mb-4">Gacha Hadiah Uang 💰</h1>
-    <div class="wheel-container relative">
-        <div class="pointer"></div>
-        <div id="wheel" class="wheel"></div>
+<body>
+    <html lang="id" style="scroll-behavior: smooth;">
+    <!-- SCROLL TO TOP BUTTON -->
+    <button id="scrollTopBtn" title="Kembali ke atas">↑</button>
+
+  <!-- NAVIGATION -->
+<nav>
+  <div class="logo">Asep Surahman Sulaeman</div>
+  <div class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#home">Beranda</a></li>
+    <li><a href="#about">Tentang</a></li>
+    <li><a href="#keahlian">Keahlian</a></li>
+    <li><a href="#pendidikan">Pendidikan</a></li>
+    <li><a href="#pengalaman">Pengalaman</a></li>
+    <li><a href="#sertifikat">Sertifikasi</a></li>
+    <li><a href="#contact">Kontak</a></li>
+  </ul>
+</nav>
+
+
+  <!-- HERO SECTION -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h1>Hai, Saya <span>Asep Surahman Sulaeman</span></h1>
+      <p>Front End Developer | Desainer | Content Creator</p>
+      <a href="CV/Asep Surahman Sulaeman.pdf" class="btn" download>Download Resume</a>
     </div>
-    <button id="gachaBtn" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-700">Putar Gacha!</button>
-    <p id="result" class="mt-4 text-lg font-semibold"></p>
+  </section>
 
-    <script>
-        const prizes = [
-            { amount: "Coba Lagi", chance: 30 },
-            { amount: 1000, chance: 10 },
-            { amount: 5000, chance: 5 },
-            { amount: 10000, chance: 2 },
-            { amount: 50000, chance: 1 },
-            { amount: 100000, chance: 0.5 },
-            { amount: 500000, chance: 0.2 },
-            { amount: 1000000, chance: 0.1 }
-        ];
+  <!-- ABOUT SECTION -->
+  <section id="about" class="section">
+    <div class="container about-grid">
+      <div class="about-text">
+        <h2>Tentang Saya</h2>
+        <p>Saya Asep Surahman Sulaeman, saya lahir di Cianjur, 03 Maret 2003. Saya adalah seorang front-end developer dan UI/UX enthusiast yang berpengalaman mengembangkan berbagai proyek website mulai dari landing page, dashboard admin, hingga aplikasi berbasis Website. </p>
+        <a href="#contact" class="btn">Hubungi Saya</a>
+      </div>
+      <div class="about-img">
+        <img src="images/ChatGPT Image 26 Mei 2025, 10.10.28.png" alt="Asep Surahman Sulaeman" />
+      </div>
+    </div>
+  </section>
 
-        const wheel = document.getElementById("wheel");
-        let colors = ["#FF5733", "#FFC300", "#DAF7A6", "#C70039", "#900C3F", "#581845", "#3498db", "#2ecc71"];
+  <!-- KEAHLIAN SECTION -->
+  <section id="keahlian" class="section tech-section">
+    <div class="container">
+      <h2>Keahlian</h2>
+        <p class="tech-desc">Berikut merupakan beberapa skills teknologi pemrograman yang saya kuasai untuk mendukung berbagai kebutuhan digital.</p>
+          <div class="skills-grid">
+            <div class="skill-card">
+              <img src="https://img.icons8.com/color/48/html-5--v1.png" alt="HTML5">
+              <span>HTML5</span>
+            </div>
+            <div class="skill-card">
+              <img src="https://img.icons8.com/color/48/css3.png" alt="CSS3">
+              <span>CSS3</span>
+            </div>
+            <div class="skill-card">
+              <img src="https://img.icons8.com/color/48/javascript--v1.png" alt="JavaScript">
+              <span>JavaScript</span>
+            </div>
+            <div class="skill-card">
+              <img src="https://img.icons8.com/ios-filled/50/github.png" alt="Git & GitHub">
+              <span>Git & GitHub</span>
+            </div>
+            <div class="skill-card">
+              <img src="https://img.icons8.com/color/48/figma--v1.png" alt="Figma">
+              <span>Figma</span>
+            </div>
+            <div class="skill-card">
+              <img src="https://img.icons8.com/color/48/react-native.png" alt="React JS">
+              <span>React JS</span>
+            </div>
+            <div class="skill-card">
+              <img src="https://img.icons8.com/color/48/vue-js.png" alt="Vue JS">
+              <span>Vue JS</span>
+            </div>
+            <div class="skill-card">
+              <img src="https://img.icons8.com/color/48/tailwindcss.png" alt="Tailwind CSS">
+              <span>Tailwind CSS</span>
+            </div>
+            <div class="skill-card">
+              <img src="https://img.icons8.com/color/48/bootstrap.png" alt="Bootstrap">
+              <span>Bootstrap</span>
+            </div>
+              <div class="skill-card">
+              <img src="https://img.icons8.com/color/48/php.png" alt="PHP">
+            <span>PHP</span>
+            </div>
+            <div class="skill-card">
+              <img src="https://img.icons8.com/ios-filled/50/FA5252/laravel.png" alt="Laravel">
+              <span>Laravel</span>
+            </div>
+            <div class="skill-card">
+              <img src="https://img.icons8.com/color/48/python.png" alt="Python">
+              <span>Python</span>
+            </div>
+            <div class="skill-card">
+              <img src="https://img.icons8.com/color/48/java-coffee-cup-logo--v1.png" alt="Java">
+              <span>Java</span>
+            </div>
+            <div class="skill-card">
+              <img src="https://img.icons8.com/color/48/c-plus-plus-logo.png" alt="C++">
+              <span>C++</span>
+            </div>
+        </div>
+      </div>
+  </section>
 
-        prizes.forEach((prize, index) => {
-            let slice = document.createElement("div");
-            slice.className = "slice";
-            let rotation = index * (360 / prizes.length);
-            slice.style.transform = `rotate(${rotation}deg)`;
-            slice.style.background = colors[index % colors.length];
-            let text = document.createElement("span");
-            text.innerText = prize.amount;
-            text.style.transform = `rotate(${(360 / prizes.length) / 2}deg)`;
-            slice.appendChild(text);
-            wheel.appendChild(slice);
-        });
+  <!-- PROJECTS SECTION -->
+  <section id="projects" class="section">
+    <div class="container">
+      <h2>Proyek Saya</h2>
+      <p class="project-desc">Berikut merupakan beberapa proyek yang telah saya kerjakan.</p>
+      <div class="project-grid">
+        <div class="project-card">
+          <img src="images/projek 1.png" alt="Portfolio">
+          <div class="card-content">
+            <h3>Website Portfolio</h3>
+            <p>Personal branding website dengan animasi scroll, dark mode, dan responsive design.</p>
+            <a href="#">Demo</a>
+          </div>
+        </div>
+        <div class="project-card">
+          <img src="images/Cuplikan layar 2025-05-27 114709.png" alt="Project 2">
+          <div class="card-content">
+            <h3>Dashboard Admin</h3>
+            <p>Dashboard Admin, dibangun dengan HTML, CSS, JavaScript, MySQL dan PHP Native</p>
+            <a href="#">Demo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        document.getElementById("gachaBtn").addEventListener("click", function() {
-            let random = Math.random() * 100;
-            let cumulativeChance = 0;
-            let selectedPrize = "Coba Lagi";
+  <!-- PENDIDIKAN -->
+  <section id="pendidikan" class="section">
+    <div class="container">
+      <h2>Riwayat Pendidikan</h2>
+      <p class="pendidikan-desc">
+      Saya telah menyelesaikan jenjang pendidikan sebagai bagian untuk terus belajar dan berkembang.
+      </p>
+      <ul class="cert-list">
+        <li><strong>SMA PGRI Takokak</strong> – 2020</li>
+        <li><strong>Universitas Nusa Putra Sukabumi</strong> – S1 Teknik Informatika, 2024</li>
+        <li><strong>Universitas Nusa Putra Sukabumi</strong> – S2 Magister Informastika, Sekarang</li>
+      </ul>
+    </div>
+  </section>
 
-            for (let prize of prizes) {
-                cumulativeChance += prize.chance;
-                if (random < cumulativeChance) {
-                    selectedPrize = prize.amount;
-                    break;
-                }
-            }
-            
-            let spinDegrees = Math.floor(Math.random() * 360) + (360 * 5);
-            wheel.style.transform = `rotate(${spinDegrees}deg)`;
-            setTimeout(() => {
-                document.getElementById("result").innerText = `Hasil: ${selectedPrize}`;
-            }, 3000);
-        });
-    </script>
+  <!-- PENGALAMAN -->
+  <section id="pengalaman" class="section pengalaman-section">
+    <div class="container">
+      <h2>Pengalaman</h2>
+       <p class="pengalaman-desc">Berikut adalah pengalaman saya dalam kemampuan teknis dan kerja sama tim dalam berbagai proyek pengembangan digital.</p>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3>Front-End Developer <span>@ Codetech.id</span></h3>
+            <time>Jan 2025 – Sekarang</time>
+            <p>Mengerjakan berbagai website, dashboard admin, kolaborasi dengan tim UI/UX dan backend, serta optimalisasi performa front-end.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3>Data Entry <span>@ BPS Kota Sukabumi</span></h3>
+            <time>Agustus – Oktober 2024</time>
+            <p>Melakukan input dan validasi data sensus, pengolahan data statistik, serta pengarsipan digital.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- SERTIFIKAT SECTION -->
+<section id="sertifikat" class="section">
+  <div class="container">
+    <h2>Pelatihan & Sertifikasi</h2>
+    <p class="sertifikat-desc">
+      Berikut adalah pelatihan dan sertifikasi yang telah saya selesaikan untuk mengasah keterampilan di bidang pengembangan web.
+    </p>
+    <div class="cert-grid">
+      <div class="cert-card">
+        <h3>Front-End Web Developer</h3>
+        <p>Codetech.id, Juni - Juli 2025</p>
+        <a href="https://coursera.org/verify/example" target="_blank">Lihat Sertifikat</a>
+      </div>
+      <div class="cert-card">
+        <h3>Back-End Web Developer</h3>
+        <p>Dicoding Indonesia, 2025</p>
+        <a href="https://www.dicoding.com/cert/example" target="_blank">Lihat Sertifikat</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- CONTACT SECTION -->
+<section id="contact" class="section contact-section">
+  <div class="container">
+    <h2>Hubungi Saya</h2>
+    <p class="contact-text">Hubungi saya melalui email atau media sosial di bawah ini. Saya siap membantu dan berdiskusi dengan Anda!</p>
+    <div class="social-links">
+      <a href="mailto:codetech.id@gmail.com.com" target="_blank" class="contact-link">
+        <img src="https://img.icons8.com/ios-filled/50/00c6ff/new-post.png" alt="Email"> Email
+      </a>
+      <a href="https://www.instagram.com/codetech.id/" target="_blank" class="contact-link">
+        <img src="https://img.icons8.com/ios-filled/50/00c6ff/instagram.png" alt="Instagram"> Instagram
+      </a>
+      <a href="https://www.linkedin.com/in/asep-surahman-sulaeman-048b81296/" target="_blank" class="contact-link">
+        <img src="https://img.icons8.com/ios-filled/50/00c6ff/linkedin.png" alt="LinkedIn"> LinkedIn
+      </a>
+      <a href="https://github.com/asepsurahman" target="_blank" class="contact-link">
+        <img src="https://img.icons8.com/ios-filled/50/00c6ff/github.png" alt="GitHub"> GitHub
+      </a>
+      <a href="https://wa.me/6282162624903" target="_blank" class="contact-link">
+        <img src="https://img.icons8.com/ios-filled/50/00c6ff/whatsapp.png" alt="WhatsApp"> WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Asep Surahman Sulaeman | Web Programming Codetech.id</p>
+  </footer>
+
 </body>
 </html>
