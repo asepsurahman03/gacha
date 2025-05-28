@@ -94,6 +94,19 @@ nav {
   font-weight: bold;
 }
 
+.logo a,
+.logo-link {
+  color: var(--white);
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.logo a:hover {
+  color: var(--accent);
+}
+
 .nav-links {
   display: flex;
   gap: 1.5rem;
